@@ -17,7 +17,7 @@ namespace Tubes3.Controllers
         {
             //var model = new List<Tweets>();
             var model = new Tweet[100];
-            string _address = "https://api.twitter.com/1.1/statuses/user_timeline.json?include_rts=true&screen_name=PemkotBandung&count=100";
+            string _address = "https://api.twitter.com/1.1/search/tweets.json?q=%40ridwankamil&result_type=recent&count=100";
             
 
             // Create client and insert an OAuth message handler in the message path that 
@@ -29,8 +29,9 @@ namespace Tubes3.Controllers
             int i = 0;
             if (response.IsSuccessStatusCode)
             {
-                JToken statuses = await response.Content.ReadAsAsync<JToken>();
-                foreach (var status in statuses)
+                JToken statuses1 = await response.Content.ReadAsAsync<JToken>();
+                JToken statuses2 = statuses1.SelectToken("statuses");
+                foreach (var status in statuses2)
                 {
                     string B = status["text"].ToString();
                     Tweet x = new Tweet(B);
