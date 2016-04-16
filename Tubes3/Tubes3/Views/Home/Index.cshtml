@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h1>Tweets : </h1>
+
+<div>
+    <ol class="round">
+        @foreach (dynamic item in Model)
+        {
+            <h2></h2>
+            <li>
+                @item.getText()
+            </li>
+        }
+    </ol>
+</div>
