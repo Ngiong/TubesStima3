@@ -13,13 +13,29 @@ namespace Tubes3.Controllers
 {
     public class HomeController : Controller
     {
+        private static UserInput user_input = new UserInput();
+        private static Tweet[] tweets;
+        private static Dictionary[] dictionaries;
+
         public async System.Threading.Tasks.Task<ActionResult> Index()
         {
-            //var model = new List<Tweets>();
-            var model = new Tweet[100];
+            /*
+             * ===================================== PROSES DICTIONARY ===================================== 
+             */
+            
+            dictionaries = new Dictionary[5];
+            dictionaries[0] = new Dictionary("DINAS_1"); dictionaries[0].convertToDictionary(user_input.dinas1);
+            dictionaries[1] = new Dictionary("DINAS_2"); dictionaries[1].convertToDictionary(user_input.dinas2);
+            dictionaries[2] = new Dictionary("DINAS_3"); dictionaries[2].convertToDictionary(user_input.dinas3);
+            dictionaries[3] = new Dictionary("DINAS_4"); dictionaries[3].convertToDictionary(user_input.dinas4);
+            dictionaries[4] = new Dictionary("DINAS_5"); dictionaries[4].convertToDictionary(user_input.dinas5);
+
+            /*
+             * ===================================== PROSES & UPDATE TWITTER ===================================== 
+             */
+            tweets = new Tweet[100];
             string _address = "https://api.twitter.com/1.1/search/tweets.json?q=%40ridwankamil&result_type=recent&count=100";
             
-
             // Create client and insert an OAuth message handler in the message path that 
             // inserts an OAuth authentication header in the request
             HttpClient client = new HttpClient(new OAuthMessageHandler(new HttpClientHandler()));
@@ -35,30 +51,56 @@ namespace Tubes3.Controllers
                 {
                     string B = status["text"].ToString();
                     Tweet x = new Tweet(B);
-                    model[i] = x;
-                    i++;
+                    x.analyzeMe(dictionaries, user_input.choice);
+                    tweets[i++] = x;
                 }
             }
-            return View(model);
+
+            ViewBag.Tweets = tweets;
+            return View();
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "PUTANG INA BOBO!!";
 
             return View();
         }
 
-        public ActionResult Clear()
+        public ActionResult Test()
         {
-            ViewBag.Message = "Your application description page.";
-            return View();
+            ViewBag.Message = "This Page is for Testing Purpose Only";
+            return View(user_input);
         }
 
         public ActionResult Search()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Search Tweets";
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Search(UserInput u)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(u);
+            }
+            else
+            {
+                user_input = u;
+                return RedirectToAction("Index");
+            }
+        }
+    }
+    public class UserInput
+    {
+        public string keywords { get; set; }
+        public string dinas1 { get; set; }
+        public string dinas2 { get; set; }
+        public string dinas3 { get; set; }
+        public string dinas4 { get; set; }
+        public string dinas5 { get; set; }
+        public int choice { get; set; }
     }
 }

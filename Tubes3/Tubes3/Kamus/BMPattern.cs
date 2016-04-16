@@ -9,6 +9,10 @@ namespace Tubes3.Kamus
     {
         public static int bmMatch(String text, String pattern)
         {
+            int res = text.IndexOf(pattern);
+            if (res == -1) return 9999;
+            else return res;
+            /*
             int[] last = buildLast(pattern);
             int n = text.Length;
             int m = pattern.Length;
@@ -32,6 +36,7 @@ namespace Tubes3.Kamus
                 }
             } while (i <= n - 1);
             return 9999; // no match
+            */
         }
 
         public static int[] buildLast(String pattern)    /* Return array storing index of last    occurrence of each ASCII char in pattern. */

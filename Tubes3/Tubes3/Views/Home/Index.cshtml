@@ -6,11 +6,13 @@
 
 <div>
     <ol class="round">
-        @foreach (dynamic item in Model)
+        @foreach (dynamic item in ViewBag.Tweets)
         {
-            <h2></h2>
             <li>
                 @item.getText()
+            </li>
+            <li>
+                @item.getCategory()
             </li>
         }
     </ol>
