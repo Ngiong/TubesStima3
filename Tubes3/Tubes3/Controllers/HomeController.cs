@@ -37,7 +37,7 @@ namespace Tubes3.Controllers
 
             /* Parsing untuk Search API */
             Parser P = new Parser();
-            string inputQuery = user_input.twitterKeyWord;
+            string inputQuery = user_input.keywords;
             string query = P.Parse(inputQuery);
             string _address = "https://api.twitter.com/1.1/search/tweets.json?q="+query+"&count=100";
             

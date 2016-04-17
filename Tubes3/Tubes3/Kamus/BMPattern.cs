@@ -30,12 +30,9 @@ namespace Tubes3.Kamus
                     }
                 else
                 { // character jump technique
-                    if (text[i] < 128)
-                    {
-                        int lo = last[text[i]];  //last occ
-                        i = i + m - Math.Min(j, 1 + lo);
-                        j = m - 1;
-                    }
+                    int lo = last[text[i]];  //last occ
+                    i = i + m - Math.Min(j, 1 + lo);
+                    j = m - 1;
                 }
             } while (i <= n - 1);
             return 9999; // no match
@@ -44,8 +41,8 @@ namespace Tubes3.Kamus
 
         public static int[] buildLast(String pattern)    /* Return array storing index of last    occurrence of each ASCII char in pattern. */
         {
-            int[] last = new int[128]; // ASCII char set
-            for (int i = 0; i < 128; i++) last[i] = -1; // initialize array
+            int[] last = new int[128000]; // ASCII char set
+            for (int i = 0; i < 128000; i++) last[i] = -1; // initialize array
             for (int i = 0; i < pattern.Length; i++) last[pattern[i]] = i;
             return last;
         }
