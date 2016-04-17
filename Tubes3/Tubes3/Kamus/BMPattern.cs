@@ -30,9 +30,12 @@ namespace Tubes3.Kamus
                     }
                 else
                 { // character jump technique
-                    int lo = last[text[i]];  //last occ
-                    i = i + m - Math.Min(j, 1 + lo);
-                    j = m - 1;
+                    if (text[i] < 128)
+                    {
+                        int lo = last[text[i]];  //last occ
+                        i = i + m - Math.Min(j, 1 + lo);
+                        j = m - 1;
+                    }
                 }
             } while (i <= n - 1);
             return 9999; // no match
