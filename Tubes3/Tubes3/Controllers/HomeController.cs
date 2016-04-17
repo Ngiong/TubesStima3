@@ -39,7 +39,7 @@ namespace Tubes3.Controllers
             Parser P = new Parser();
             string inputQuery = user_input.twitterKeyWord;
             string query = P.Parse(inputQuery);
-            string _address = "https://api.twitter.com/1.1/search/tweets.json?q="+query+"&recent&count=100";
+            string _address = "https://api.twitter.com/1.1/search/tweets.json?q="+query+"&count=100";
             
             // Create client and insert an OAuth message handler in the message path that 
             // inserts an OAuth authentication header in the request
