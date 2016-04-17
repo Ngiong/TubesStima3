@@ -33,7 +33,7 @@ namespace Tubes3.Kamus
                     if (type == 0) res = KMPPattern.kmpMatch(tweet, str);
                     else res = BMPattern.bmMatch(tweet, str);
 
-                    if (res < minIdx) res = minIdx;
+                    if (res < minIdx) minIdx = res;
                 }
                 if (minIdx < current_result) current_result = minIdx;
             }
