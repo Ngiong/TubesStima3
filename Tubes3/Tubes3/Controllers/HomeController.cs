@@ -34,7 +34,12 @@ namespace Tubes3.Controllers
              * ===================================== PROSES & UPDATE TWITTER ===================================== 
              */
             tweets = new Tweet[100];
-            string _address = "https://api.twitter.com/1.1/search/tweets.json?q=%40ridwankamil&result_type=recent&count=100";
+
+            /* Parsing untuk Search API */
+            Parser P = new Parser();
+            string inputQuery = user_input.twitterKeyWord;
+            string query = P.Parse(inputQuery);
+            string _address = "https://api.twitter.com/1.1/search/tweets.json?q="+query+"&count=100";
             
             // Create client and insert an OAuth message handler in the message path that 
             // inserts an OAuth authentication header in the request
@@ -96,6 +101,7 @@ namespace Tubes3.Controllers
     public class UserInput
     {
         public string keywords { get; set; }
+        public string twitterKeyWord { get; set; }
         public string dinas1 { get; set; }
         public string dinas2 { get; set; }
         public string dinas3 { get; set; }
