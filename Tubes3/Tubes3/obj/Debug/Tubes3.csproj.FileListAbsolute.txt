@@ -253,6 +253,5 @@ C:\Users\Frys\Desktop\C#\Stima\Tubes3\TubesStima3\Tubes3\Tubes3\bin\Microsoft.Ow
 C:\Users\Frys\Desktop\C#\Stima\Tubes3\TubesStima3\Tubes3\Tubes3\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Frys\Desktop\C#\Stima\Tubes3\TubesStima3\Tubes3\Tubes3\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Frys\Desktop\C#\Stima\Tubes3\TubesStima3\Tubes3\Tubes3\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Frys\Desktop\C#\Stima\Tubes3\TubesStima3\Tubes3\Tubes3\obj\Debug\Tubes3.csprojResolveAssemblyReference.cache
 C:\Users\Frys\Desktop\C#\Stima\Tubes3\TubesStima3\Tubes3\Tubes3\obj\Debug\Tubes3.dll
 C:\Users\Frys\Desktop\C#\Stima\Tubes3\TubesStima3\Tubes3\Tubes3\obj\Debug\Tubes3.pdb

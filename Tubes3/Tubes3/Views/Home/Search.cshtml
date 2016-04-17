@@ -6,21 +6,19 @@
 
 @using (Html.BeginForm())
 {
-    
+
 }
 
-<form action="http://maps.google.com/maps" id="getdirections" class="clearfix" method="get" target="_blank">
+    
+<form action="/Home/Search" class="clearfix" method="post" id="signupform">
     <div class="directionleft">
-        <input type="text" name="key" id="keywordsbox" placeholder="Keywords ..." />
-        <input type="hidden" name="daddr" value="52.90744,-1.384114" /> <br /> <br />
-        <input type="text" name="key" id="dinas1box" placeholder="Dinas 1 ..." />
-        <input type="hidden" name="daddr" value="52.90744,-1.384114" /> <br /> <br />
-        <input type="text" name="key" id="dinas2box" placeholder="Dinas 2 ..." />
-        <input type="hidden" name="daddr" value="52.90744,-1.384114" /> <br /> <br />
-        <input type="text" name="key" id="dinas3box" placeholder="Dinas 3 ..." />
-        <input type="hidden" name="daddr" value="52.90744,-1.384114" /> <br /> <br />
-        <input type="text" name="key" id="choicebox" placeholder="Choice ..." />
-        <input type="hidden" name="daddr" value="52.90744,-1.384114" /> <br /> <br />
+        <input type="text" name="keywords" id="keywords" placeholder="Keywords ..." value="" /> <br /> <br />
+        <input type="text" name="dinas1" id="dinas1" placeholder="Dinas 1 ..."  value=""/> <br /> <br />
+        <input type="text" name="dinas2" id="dinas2" placeholder="Dinas 2 ..."  value=""/> <br /> <br />
+        <input type="text" name="dinas3" id="dinas3" placeholder="Dinas 3 ..."  value=""/> <br /> <br />
+        <input type="text" name="dinas4" id="dinas4" placeholder="Dinas 3 ..."  value=""/> <br /> <br />
+        <input type="text" name="dinas5" id="dinas5" placeholder="Dinas 3 ..."  value=""/> <br /> <br />
+        <input data-val="true" data-val-number="The field choice must be a number." data-val-required="The choice field is required." id="choice" name="choice" type="text" value="" placeholder="Choice ..."/> <br /> <br />
         <button type="submit" class="btn btnstyle btn-5a icon-arrow-right" value="submit"><span>Submit</span></button>
     </div>
     
