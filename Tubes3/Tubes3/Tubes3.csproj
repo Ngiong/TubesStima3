@@ -206,6 +206,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Kamus\BMPattern.cs" />
     <Compile Include="Kamus\KMPPattern.cs" />
+    <Compile Include="Kamus\Parser.cs" />
     <Compile Include="Kamus\TweetAnalyzer.cs" />
     <Compile Include="Kamus\Tweet.cs" />
     <Compile Include="Global.asax.cs">
