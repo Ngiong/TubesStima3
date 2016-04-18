@@ -5,15 +5,15 @@
 <h1>Tweets : </h1>
 
 <div>
-    <ol class="round">
-        @foreach (dynamic item in ViewBag.Tweets)
-        {
-            <li>
-                @item.getText()
-            </li>
-            <li>
-                @item.getCategory()
-            </li>
-        }
-    </ol>
+    @foreach (dynamic item in ViewBag.Tweets)
+    {
+        <div class="section bg2 clearfix">
+                <div class="overlay">
+                    <div class="overlaycontent">
+                        <h3>@item.getText()
+                        @item.getCategory() </h3>
+                    </div>
+                </div>
+        </div>
+    }
 </div>

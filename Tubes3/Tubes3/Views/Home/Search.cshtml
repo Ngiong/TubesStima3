@@ -2,25 +2,24 @@
 @{
     ViewBag.Title = "Home Page";
 }
-<h2>@ViewBag.Title</h2>
 <h4>@ViewBag.Message</h4>
 
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(o => o.keywords)
-    @Html.TextBoxFor(o => o.keywords)<br /><br />
-    @Html.LabelFor(o => o.dinas1)
-    @Html.TextBoxFor(o => o.dinas1)<br />
-    @Html.LabelFor(o => o.dinas2)
-    @Html.TextBoxFor(o => o.dinas2)<br />
-    @Html.LabelFor(o => o.dinas3)
-    @Html.TextBoxFor(o => o.dinas3)<br />
-    @Html.LabelFor(o => o.dinas4)
-    @Html.TextBoxFor(o => o.dinas4)<br />
-    @Html.LabelFor(o => o.dinas5)
-    @Html.TextBoxFor(o => o.dinas5)<br />
-    @Html.LabelFor(o => o.choice)
-    @Html.TextBoxFor(o => o.choice)<br />
-
-    <input type="submit" value="Submit" />
 }
+
+    
+<form action="/Home/Search" class="clearfix" method="post" id="signupform">
+    <div class="directionleft">
+        <input type="text" name="keywords" id="keywords" placeholder="Keywords ..." value="" /> <br /> <br />
+        <input type="text" name="dinas1" id="dinas1" placeholder="Dinas 1 ..."  value=""/> <br /> <br />
+        <input type="text" name="dinas2" id="dinas2" placeholder="Dinas 2 ..."  value=""/> <br /> <br />
+        <input type="text" name="dinas3" id="dinas3" placeholder="Dinas 3 ..."  value=""/> <br /> <br />
+        <input type="text" name="dinas4" id="dinas4" placeholder="Dinas 4 ..."  value=""/> <br /> <br />
+        <input type="text" name="dinas5" id="dinas5" placeholder="Dinas 5 ..."  value=""/> <br /> <br />
+        <input data-val="true" data-val-number="The field choice must be a number." data-val-required="The choice field is required." id="choice" name="choice" type="text" value="" placeholder="Choice ..."/> <br /> <br />
+        <button type="submit" class="btn btnstyle btn-5a icon-arrow-right" value="submit"><span>Submit</span></button>
+    </div>
+    
+
+ </form>
