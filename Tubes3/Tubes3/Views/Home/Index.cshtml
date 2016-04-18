@@ -7,13 +7,12 @@
 <div>
     @foreach (dynamic item in ViewBag.Tweets)
     {
-        <div class="section bg2 clearfix">
                 <div class="overlay">
                     <div class="overlaycontent">
                         <h3>@item.getText()
-                        @item.getCategory() </h3>
+                        @item.getCategory()</h3>
+
                     </div>
                 </div>
-        </div>
     }
 </div>
