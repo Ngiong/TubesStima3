@@ -54,7 +54,7 @@ namespace Tubes3.Controllers
                 JToken statuses2 = statuses1.SelectToken("statuses");
                 foreach (var status in statuses2)
                 {
-                    JToken user = status.SelectToken("screen_name");
+                    JToken user = status.SelectToken("user");
                     string user_name = user["screen_name"].ToString();
                     string image_url = user["profile_image_url"].ToString();
                     string B = status["text"].ToString();
