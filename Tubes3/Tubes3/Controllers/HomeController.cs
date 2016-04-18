@@ -54,8 +54,11 @@ namespace Tubes3.Controllers
                 JToken statuses2 = statuses1.SelectToken("statuses");
                 foreach (var status in statuses2)
                 {
+                    JToken user = status.SelectToken("screen_name");
+                    string user_name = user["screen_name"].ToString();
+                    string image_url = user["profile_image_url"].ToString();
                     string B = status["text"].ToString();
-                    Tweet x = new Tweet(B);
+                    Tweet x = new Tweet(B, user_name, image_url);
                     x.analyzeMe(dictionaries, user_input.choice);
                     tweets[i++] = x;
                 }

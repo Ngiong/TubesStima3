@@ -10,24 +10,39 @@ namespace Tubes3.Kamus
         private string Text;
         private int firstOccurence;
         private string category;
+        private string user_name;
+        private string image_url;
         
         public Tweet()
         {
             Text = null;
             firstOccurence = 9999;
             category = "";
+            user_name = "";
         }
 
-        public Tweet(string isi) 
+        public Tweet(string isi, string user_name, string image_url) 
         {
-            Text = isi;
+            Text = isi.ToUpper();
             firstOccurence = 9999;
             category = "";
+            this.user_name = user_name;
+            this.image_url = image_url;
         }
 
         public string getText()
         {
             return Text;
+        }
+
+        public string getUserName()
+        {
+            return user_name;
+        }
+
+        public string getImageURL()
+        {
+            return image_url;
         }
 
         public int getFirstOccurence()
