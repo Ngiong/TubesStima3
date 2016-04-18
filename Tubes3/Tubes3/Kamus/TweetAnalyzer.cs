@@ -24,7 +24,7 @@ namespace Tubes3.Kamus
             int current_result = 9999; // Belum ketemu
             for (int i = 0; i < dict.Count(); i++)
             {
-                int minIdx = 9999;
+                int minIdx = 9999, countKetemu = 0;
                 for (int j = 0; j < dict[i].Count(); j++)
                 {
                     string str = dict[i][j];
@@ -33,9 +33,13 @@ namespace Tubes3.Kamus
                     if (type == 0) res = KMPPattern.kmpMatch(tweet, str);
                     else res = BMPattern.bmMatch(tweet, str);
 
-                    if (res < minIdx) minIdx = res;
+                    if (res < minIdx)
+                    {
+                        minIdx = res;
+                        countKetemu++;
+                    }
                 }
-                if (minIdx < current_result) current_result = minIdx;
+                if (minIdx < current_result && countKetemu == dict[i].Count()) current_result = minIdx;
             }
             return current_result;
         }
