@@ -20,6 +20,7 @@ namespace Tubes3.Kamus
             tweetKategori3 = new List<Tweet>();
             tweetKategori4 = new List<Tweet>();
             tweetKategori5 = new List<Tweet>();
+            tweetKategoriUnknown = new List<Tweet>();
         }
 
         public void Categorize(Dictionary[] dictionaries, Tweet[] tweets, int n)

@@ -205,6 +205,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Kamus\BMPattern.cs" />
+    <Compile Include="Kamus\TweetCategorizer.cs" />
     <Compile Include="Kamus\KMPPattern.cs" />
     <Compile Include="Kamus\Parser.cs" />
     <Compile Include="Kamus\TweetAnalyzer.cs" />
