@@ -49,17 +49,20 @@ namespace Tubes3.Kamus
         // Convert dari sebuah String PANJANG yang dipisahkan oleh ';' menjadi beberapa MultiString
         // Contoh : abc; def; ghi; j k l; menjadi [[abc], [def], [ghi], [j,k,l]]
         {
-            int j = 0, size = input.Length;
-            int last = 0, len = 0;
-            while (j < size)
+            if (input  != null)
             {
-                len = 0;
-                while (j < size && input[j] != ';') { j++; len++; }
-                // input[j] == ';' || j == size
-                string tmpStr = input.Substring(last, len);
-                dictionary.Add(convertToMultiString(tmpStr));
-                while (j < size && (input[j] == ' ' || input[j] == ';')) j++;
-                last = j;
+                int j = 0, size = input.Length;
+                int last = 0, len = 0;
+                while (j < size)
+                {
+                    len = 0;
+                    while (j < size && input[j] != ';') { j++; len++; }
+                    // input[j] == ';' || j == size
+                    string tmpStr = input.Substring(last, len);
+                    dictionary.Add(convertToMultiString(tmpStr));
+                    while (j < size && (input[j] == ' ' || input[j] == ';')) j++;
+                    last = j;
+                }
             }
         }
 

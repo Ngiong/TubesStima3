@@ -58,13 +58,18 @@ namespace Tubes3.Controllers
                     string user_name = user["screen_name"].ToString();
                     string image_url = user["profile_image_url"].ToString();
                     string B = status["text"].ToString();
-                    Tweet x = new Tweet(B, user_name, image_url);
+                    string name = user["name"].ToString();
+                    string tweet_url = "http://twitter.com/statuses/" + user["id"].ToString();
+                    Tweet x = new Tweet(B, user_name, image_url, name, tweet_url);
                     x.analyzeMe(dictionaries, user_input.choice);
-                    tweets[i++] = x;
+                    tweets[i] = x;
+                    i++;
                 }
             }
-
+            TweetCategorizer tweetCategorized = new TweetCategorizer();
+            tweetCategorized.Categorize(dictionaries, tweets, i);
             ViewBag.Tweets = tweets;
+            ViewBag.TweetsCategorized = tweetCategorized;
             return View();
         }
 

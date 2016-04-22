@@ -12,6 +12,8 @@ namespace Tubes3.Kamus
         private string category;
         private string user_name;
         private string image_url;
+        private string tweet_url;
+        private string name;
         
         public Tweet()
         {
@@ -19,15 +21,19 @@ namespace Tubes3.Kamus
             firstOccurence = 9999;
             category = "";
             user_name = "";
+            name = "";
+            tweet_url = "";
         }
 
-        public Tweet(string isi, string user_name, string image_url) 
+        public Tweet(string isi, string user_name, string image_url, string name, string tweet_url) 
         {
             Text = isi.ToUpper();
             firstOccurence = 9999;
             category = "";
             this.user_name = user_name;
             this.image_url = image_url;
+            this.name = name;
+            this.tweet_url = tweet_url;
         }
 
         public string getText()
@@ -53,6 +59,16 @@ namespace Tubes3.Kamus
         public string getCategory()
         {
             return category;
+        }
+
+        public string getTweetURL()
+        {
+            return tweet_url;
+        }
+
+        public string getName()
+        {
+            return name;
         }
 
         public void analyzeMe(Dictionary[] dictionaries, int choice)
