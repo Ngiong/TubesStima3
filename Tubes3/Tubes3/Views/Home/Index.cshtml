@@ -7,28 +7,50 @@
 <div>
     @for (var i = 0; i < 6; i++)
     {
-        foreach (dynamic item in ViewBag.TweetsCategorized.getListTweetFromCategory(i))
-        {
-            <div class="overlay">
-                <div class="overlaycontent">
-                    <img src=@item.getImageURL()> <br /> <h4>@item.getUserName() <br /> @item.getCategory() L : @item.getLatitude() L : @item.getLongitude()</h4>
-                    <h3>@item.getText()</h3>
-                    <h3>@item.getCategory()</h3>
-                    @{
-                        String onclick = String.Format("showCoordinate({0}, {1})",
-                            item.getLatitude(), item.getLongitude());
-                    }
-                    @if (item.getLatitude() != 0 && item.getLongitude() != 0)
-                    {
-                        <input type="button" class="btn btnstyle btn-5a icon-arrow-right" value=" see location" onclick="@onclick" />
-                    }
-                    else
-                    {
-                        <input type="button" class="btn btnstyle btn-5a icon-arrow-right" value=" location is not available" disabled="true" />
-                    }
+        <div class="container">
+            @{
+                string str_category;
+                if (i == 0) { str_category = "UNKNOWN"; }
+                else if (i == 1) { str_category = "DINAS_1"; }
+                else if (i == 2) { str_category = "DINAS_2"; }
+                else if (i == 3) { str_category = "DINAS_3"; }
+                else if (i == 4) { str_category = "DINAS_4"; }
+                else { str_category = "DINAS_5"; }
+                
+                <h3>Category : @str_category</h3>
+                var item_count = ViewBag.TweetsCategorized.getListTweetFromCategory(i).Count;
+                if (item_count == 0)
+                {
+                    <div class="overlay">
+                        <div class="overlaycontent">
+                            <h3>Tidak ada Tweet yang ditemukan untuk kategori ini.</h3>
+                        </div>
+                    </div>
+                }
+            }
+            
+            @foreach (dynamic item in ViewBag.TweetsCategorized.getListTweetFromCategory(i))
+            {
+                <div class="overlay">
+                    <div class="overlaycontent">
+                        <img src=@item.getImageURL()> <span style="font-size:20px;font-style:bold">@item.getUserName()</span>
+                        <h3>@item.getText()</h3>
+                        @{
+                            String onclick = String.Format("showCoordinate({0}, {1})",
+                                item.getLatitude(), item.getLongitude());
+                        }
+                        @if (item.getLatitude() != 0 && item.getLongitude() != 0)
+                        {
+                            <input type="button" class="btn btnstyle btn-5a icon-arrow-right" value=" see location" onclick="@onclick" />
+                        }
+                        else
+                        {
+                            <input type="button" class="btn btnstyle btn-5a icon-arrow-right" value=" location is not available" disabled="true" />
+                        }
+                    </div>
                 </div>
+                }
             </div>
-        }
     }
 </div>
 
