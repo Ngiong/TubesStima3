@@ -5,13 +5,13 @@
 <h1>Tweets : </h1>
 
 <div>
-    @for (var i = -1; i < 6; i++)
+    @for (var i = 0; i < 6; i++)
     {
         foreach (dynamic item in ViewBag.TweetsCategorized.getListTweetFromCategory(i))
         {
             <div class="overlay">
                 <div class="overlaycontent">
-                    <img src=@item.getImageURL()> <br /> <h4>@item.getUserName() <br /> </h4>
+                    <img src=@item.getImageURL()> <br /> <h4>@item.getUserName() <br /> @item.getCategory()</h4>
                     <h3>@item.getText()</h3>
                     <h3>@item.getCategory()</h3>
                 </div>

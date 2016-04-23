@@ -51,6 +51,7 @@ namespace Tubes3.Kamus
         {
             if (input  != null)
             {
+                input = input.ToUpper();
                 int j = 0, size = input.Length;
                 int last = 0, len = 0;
                 while (j < size)
