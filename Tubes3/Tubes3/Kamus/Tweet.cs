@@ -30,7 +30,7 @@ namespace Tubes3.Kamus
             Text = isi.ToUpper();
             firstOccurence = 9999;
             category = "";
-            this.user_name = user_name;
+            this.user_name = "@" + user_name;
             this.image_url = image_url;
             this.name = name;
             this.tweet_url = tweet_url;

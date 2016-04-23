@@ -5,79 +5,17 @@
 <h1>Tweets : </h1>
 
 <div>
-    @foreach (dynamic item in ViewBag.TweetsCategorized.getListTweetFromCategory(1))
+    @for (var i = -1; i < 6; i++)
     {
-        <div class="overlay">
-            <div class="overlaycontent">
-                <img src=@item.getImageURL()>
-                <h4>@item.getText()</h4>
-                <h4>@item.getCategory()</h4>
+        foreach (dynamic item in ViewBag.TweetsCategorized.getListTweetFromCategory(i))
+        {
+            <div class="overlay">
+                <div class="overlaycontent">
+                    <img src=@item.getImageURL()> <br /> <h4>@item.getUserName() <br /> </h4>
+                    <h3>@item.getText()</h3>
+                    <h3>@item.getCategory()</h3>
+                </div>
             </div>
-        </div>
-    }
-</div>
-
-<div>
-    @foreach (dynamic item in ViewBag.TweetsCategorized.getListTweetFromCategory(2))
-    {
-        <div class="overlay">
-            <div class="overlaycontent">
-                <img src=@item.getImageURL()>
-                <h4>@item.getText()</h4>
-                <h4>@item.getCategory()</h4>
-            </div>
-        </div>
-    }
-</div>
-
-<div>
-    @foreach (dynamic item in ViewBag.TweetsCategorized.getListTweetFromCategory(3))
-    {
-        <div class="overlay">
-            <div class="overlaycontent">
-                <img src=@item.getImageURL()>
-                <h4>@item.getText()</h4>
-                <h4>@item.getCategory()</h4>
-            </div>
-        </div>
-    }
-</div>
-
-<div>
-    @foreach (dynamic item in ViewBag.TweetsCategorized.getListTweetFromCategory(4))
-    {
-        <div class="overlay">
-            <div class="overlaycontent">
-                <img src=@item.getImageURL()>
-                <h4>@item.getText()</h4>
-                <h4>@item.getCategory()</h4>
-            </div>
-        </div>
-    }
-</div>
-
-<div>
-    @foreach (dynamic item in ViewBag.TweetsCategorized.getListTweetFromCategory(5))
-    {
-        <div class="overlay">
-            <div class="overlaycontent">
-                <img src=@item.getImageURL()>
-                <h4>@item.getText()</h4>
-                <h4>@item.getCategory()</h4>
-            </div>
-        </div>
-    }
-</div>
-
-<div>
-    @foreach (dynamic item in ViewBag.TweetsCategorized.getListTweetFromCategory(-1))
-    {
-        <div class="overlay">
-            <div class="overlaycontent">
-                <img src=@item.getImageURL()>
-                <h4>@item.getText()</h4>
-                <h4>@item.getCategory()</h4>
-            </div>
-        </div>
+        }
     }
 </div>
