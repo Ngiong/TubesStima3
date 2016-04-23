@@ -37,5 +37,24 @@ namespace Tubes3.Kamus
             }
             return result;
         }
+
+        public string ParserMaps(string input)
+        {
+            string result = "";
+            int j = 0;
+            while (j < input.Length)
+            {
+                if (input[j] == ' ')
+                {
+                    result += "+";
+                }
+                else
+                {
+                    result += input[j];
+                }
+                j++;
+            }
+            return result;
+        }
     }
 }

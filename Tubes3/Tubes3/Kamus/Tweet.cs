@@ -14,6 +14,8 @@ namespace Tubes3.Kamus
         private string image_url;
         private string tweet_url;
         private string name;
+        private double lat;//latitude
+        private double lng;//longitude
         
         public Tweet()
         {
@@ -23,9 +25,12 @@ namespace Tubes3.Kamus
             user_name = "";
             name = "";
             tweet_url = "";
+            lat = 0.0;
+            lng = 0.0;
         }
 
-        public Tweet(string isi, string user_name, string image_url, string name, string tweet_url) 
+        public Tweet(string isi, string user_name, string image_url, string name, string tweet_url, double lat,
+            double lng) 
         {
             Text = isi.ToUpper();
             firstOccurence = 9999;
@@ -34,6 +39,8 @@ namespace Tubes3.Kamus
             this.image_url = image_url;
             this.name = name;
             this.tweet_url = tweet_url;
+            this.lat = lat;
+            this.lng = lng;
         }
 
         public string getText()
@@ -85,5 +92,14 @@ namespace Tubes3.Kamus
             }
         }
 
+        public double getLatitude()
+        {
+            return lat;
+        }
+
+        public double getLongitude()
+        {
+            return lng;
+        }
     }
 }

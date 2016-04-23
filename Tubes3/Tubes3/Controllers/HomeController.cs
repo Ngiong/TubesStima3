@@ -60,7 +60,31 @@ namespace Tubes3.Controllers
                     string B = status["text"].ToString();
                     string name = user["name"].ToString();
                     string tweet_url = "http://twitter.com/statuses/" + user["id"].ToString();
-                    Tweet x = new Tweet(B, user_name, image_url, name, tweet_url);
+
+                    /* Retrieve Kordinat lokasi tweet dan memasukkannya  ke tweet */
+                    string location = user["location"].ToString();
+                    double latitude = 0.0;
+                    double longitude = 0.0;
+                    if (location != null && location != "")
+                    {
+                        HttpClient MapClient = new HttpClient();
+                        string mapRequest = P.ParserMaps(location);
+                        Console.WriteLine("location " + mapRequest);
+                        string addressForMap = "http://maps.googleapis.com/maps/api/geocode/json?address=" + mapRequest;
+                        Console.WriteLine(addressForMap);
+                        HttpResponseMessage responseMap = await MapClient.GetAsync(addressForMap);
+                        responseMap.EnsureSuccessStatusCode();
+                        JToken mapsJSON = await responseMap.Content.ReadAsAsync<JToken>();
+                        JToken result = mapsJSON.SelectToken("results[0]");
+                        if (result != null)
+                        {
+                            JToken geometry = result.SelectToken("geometry");
+                            JToken locationMaps = geometry.SelectToken("location");
+                            latitude = (double)locationMaps["lat"];
+                            longitude = (double)locationMaps["lng"];
+                        }
+                    }
+                    Tweet x = new Tweet(B, user_name, image_url, name, tweet_url, latitude, longitude);
                     x.analyzeMe(dictionaries, user_input.choice);
                     tweets[i] = x;
                     i++;
