@@ -351,6 +351,68 @@ a
 				padding: 0 0 0 15px;
 			}
 
+        
+            .section .content .fullwidth .main form#getdirections input,
+			.section .content .fullwidth .main form#signupform input
+			{
+				padding: 11px;
+				width: 100%;
+				border: 2px solid #EEE;
+				background: #EEE;
+				text-align: left;
+				margin: 0;
+				font-family: inherit;
+				font-size: 13px;
+				color: #333;
+					
+				-webkit-appearance: none;
+					
+				-webkit-border-radius: 2px;
+				-moz-border-radius: 2px;
+				border-radius: 2px;
+			}
+				
+				.section .content .fullwidth .main form#getdirections input:focus,
+				.section .content .fullwidth .main form#signupform input:focus
+				{
+					border: 2px solid #1ABC9C;
+				}
+            
+            .section .content .fullwidth .main form#getdirections .mid,
+			.section .content .fullwidth .main form#signupform .mid
+			{
+				position: relative;
+                left: 25%;
+                width: 50%;
+			}
+                
+                .section .content .fullwidth .main form#getdirections .mid input,
+				.section .content .fullwidth .main form#signupform .mid input
+				{
+					padding: 11px;
+					width: 100%;
+					border: 2px solid #EEE;
+					background: #EEE;
+					text-align: left;
+					margin: 0;
+					font-family: inherit;
+					font-size: 13px;
+					color: #333;
+					
+					-webkit-appearance: none;
+					
+					-webkit-border-radius: 2px;
+					-moz-border-radius: 2px;
+					border-radius: 2px;
+				}
+				
+					.section .content .fullwidth .main form#getdirections .mid input:focus,
+					.section .content .fullwidth .main form#signupform .mid input:focus
+					{
+						border: 2px solid #1ABC9C;
+					}
+
+
 /** Footer **/
 	
 .footercont
