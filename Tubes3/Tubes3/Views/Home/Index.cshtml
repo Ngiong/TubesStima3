@@ -7,27 +7,6 @@
 <div>
     @for (var i = 0; i < 6; i++)
     {
-<<<<<<< HEAD
-        foreach (dynamic item in ViewBag.TweetsCategorized.getListTweetFromCategory(i))
-        {
-            <div class="overlay">
-                <div class="overlaycontent">
-                    <img src=@item.getImageURL()> <br /> <h4>@item.getUserName() <br /> @item.getCategory() L : @item.getLatitude() L : @item.getLongitude()</h4>
-                    <h3>@item.getText()</h3>
-                    <h3>@item.getCategory()</h3>
-                    @{
-                        String onclick = String.Format("showCoordinate({0}, {1})",
-                            item.getLatitude(), item.getLongitude());
-                    }
-                    @if (item.getLatitude() != 0 && item.getLongitude() != 0)
-                    {
-                        <input type="button" class="btn btnstyle btn-5a icon-arrow-right" value=" see location" onclick="@onclick" />
-                    }
-                    else
-                    {
-                        <input type="button" class="btn btnstyle btn-5a icon-arrow-right" value=" location is not available" disabled/>
-                    }
-=======
         <div class="container">
             @{
                 string str_category;
@@ -54,8 +33,8 @@
             {
                 <div class="overlay">
                     <div class="overlaycontent">
-                        <img src=@item.getImageURL()> <span style="font-size:20px;font-style:bold">@item.getUserName()</span>
-                        <h3>@item.getText()</h3>
+                        <img src=@item.getImageURL() height="114" width="114"><h4>@item.getUserName()</h4>
+                        <a href=@item.getTweetURL()><h3>@item.getText()</h3></a>
                         @{
                             String onclick = String.Format("showCoordinate({0}, {1})",
                                 item.getLatitude(), item.getLongitude());
@@ -66,15 +45,13 @@
                         }
                         else
                         {
-                            <input type="button" class="btn btnstyle btn-5a icon-arrow-right" value=" location is not available" disabled="true" />
+                            <input type="button" class="btn btnstyle btn-5a icon-arrow-right" value=" location is not available" disabled />
                         }
                     </div>
->>>>>>> origin/master
                 </div>
                 }
             </div>
     }
-                    }
 </div>
 
 <script>
