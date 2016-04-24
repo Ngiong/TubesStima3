@@ -5,17 +5,17 @@
 <h1>Tweets : </h1>
 
 <div>
-    @for (var i = 0; i < 6; i++)
+    @for (var i = 5; i > -1; i--)
     {
         <div class="container">
             @{
                 string str_category;
-                if (i == 0) { str_category = "UNKNOWN"; }
-                else if (i == 1) { str_category = "DINAS_1"; }
-                else if (i == 2) { str_category = "DINAS_2"; }
-                else if (i == 3) { str_category = "DINAS_3"; }
-                else if (i == 4) { str_category = "DINAS_4"; }
-                else { str_category = "DINAS_5"; }
+                if (i == 0) { str_category = "Unknown"; }
+                else if (i == 1) { str_category = "Kebersihan"; }
+                else if (i == 2) { str_category = "Pendidikan"; }
+                else if (i == 3) { str_category = "PLN"; }
+                else if (i == 4) { str_category = "PDAM"; }
+                else { str_category = "Satpol PP"; }
                 
                 <h3>Category : @str_category</h3>
                 var item_count = ViewBag.TweetsCategorized.getListTweetFromCategory(i).Count;
