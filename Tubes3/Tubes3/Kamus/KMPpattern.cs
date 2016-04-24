@@ -9,6 +9,7 @@ namespace Tubes3.Kamus
     {
         public static int kmpMatch(string text, string pattern)
         {
+            /* Mencari string pattern pada text dengan algoritma Boyer Moore */
             int n = text.Length;
             int m = pattern.Length;
             int[] fail = computeFail(pattern);
@@ -30,6 +31,7 @@ namespace Tubes3.Kamus
 
         public static int[] computeFail(string pattern)
         {
+            // Finding index for jumping
             int[] fail = new int[pattern.Length];
             fail[0] = 0;
             int m = pattern.Length;
@@ -38,7 +40,7 @@ namespace Tubes3.Kamus
             while (i < m)
             {
                 if (pattern[j] == pattern[i])
-                {   //j+1 chars match
+                {
                     fail[i] = j + 1;
                     i++;
                     j++;
