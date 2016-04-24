@@ -61,7 +61,7 @@ namespace Tubes3.Controllers
                     string image_url = user["profile_image_url"].ToString();
                     string B = status["text"].ToString();
                     string name = user["name"].ToString();
-                    string tweet_url = "http://twitter.com/statuses/" + user["id"].ToString();
+                    string tweet_url = "http://twitter.com/statuses/" + status["id"].ToString();
 
                     /* Retrieve Kordinat lokasi tweet dan memasukkannya  ke tweet */
                     string location = user["location"].ToString();
