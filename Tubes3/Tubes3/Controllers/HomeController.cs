@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data.Entity;
+using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -132,7 +134,9 @@ namespace Tubes3.Controllers
     }
     public class UserInput
     {
+        [Required]
         public string keywords { get; set; }
+
         public string twitterKeyWord { get; set; }
         public string dinas1 { get; set; }
         public string dinas2 { get; set; }
