@@ -5,3 +5,6 @@ Keterangan untuk twitterKeyword :
 Contoh :
 	Ingin mencari tweet yang memiliki text @ridwankamil dan #PemkotBandung maka pada box twitterKeyword isi dengan :
 	@ridwankamil;#PemkotBandung
+	
+Keterangan tambahan:
+Untuk menjalankan aplikasi, gunakan Microsoft Visual Studio 2013 ke atas.
