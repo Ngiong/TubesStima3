@@ -39,7 +39,7 @@ namespace Tubes3.Kamus
             
         }
 
-        public static int[] buildLast(String pattern)    /* Return array storing index of last    occurrence of each ASCII char in pattern. */
+        public static int[] buildLast(String pattern)
         {
             int[] last = new int[128000]; // ASCII char set
             for (int i = 0; i < 128000; i++) last[i] = -1; // initialize array

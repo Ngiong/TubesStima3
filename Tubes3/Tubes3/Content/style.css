@@ -412,6 +412,14 @@ a
 						border: 2px solid #1ABC9C;
 					}
 
+                    .section .content .fullwidth .main form#getdirections .mid .center,
+			        .section .content .fullwidth .main form#signupform .mid .center
+			        {
+				        position: relative;
+                        left: 25%;
+                        width: 50%;
+			        }
+
 
 /** Footer **/
 	
@@ -585,7 +593,11 @@ input[type="radio"] {
 input[type="radio"] + label {
   color: #FFF;
   font-family: "Source Sans Pro", Arial, Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 20px;
+  margin: 0;
+  font-weight: 300;
+  line-height: 34px;
+  letter-spacing: -0.6px;
 }
 
 input[type="radio"] + label span {
